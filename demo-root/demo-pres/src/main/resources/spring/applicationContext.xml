@@ -12,6 +12,9 @@
 
 	<!-- Import of other spring configs -->
 	<import resource="classpath:spring/spring-data-context.xml" />
+		<!-- Annotation -->
+	<context:component-scan base-package="com.demo.libraryd.data.*" />
+	<context:annotation-config />
 
 
 </beans>
