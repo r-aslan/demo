@@ -11,6 +11,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
+		<!-- dependency to data -->
+		<dependency>
+			<groupId>com.chal.demo</groupId>
+			<artifactId>demo-data</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
