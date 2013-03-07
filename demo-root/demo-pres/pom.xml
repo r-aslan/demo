@@ -11,9 +11,15 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<description>Presentation layer</description>
-	
+
 	<dependencies>
-	<!-- Servlet -->
+		<!-- dependency to data -->
+		<dependency>
+			<groupId>com.chal.demo</groupId>
+			<artifactId>demo-data</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>

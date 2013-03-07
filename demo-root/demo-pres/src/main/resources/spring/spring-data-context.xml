@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<context:property-placeholder location="classpath:jdbc.properties" />
+
+
+	<!-- DataSource configuration -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		p:driverClassName="${jdbc.driverClassName}" 
+		p:url="${jdbc.url}"
+		p:username="${jdbc.username}" 
+		p:password="${jdbc.password}" />
+
+
+	<!-- Entity manager -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitName" value="jpa" />
+		<property name="persistenceXmlLocation" value="classpath:persistence.xml" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="showSql" value="true" />
+				<property name="databasePlatform" value="org.hibernate.dialect.HSQLDialect" />
+				<property name="generateDdl" value="true" />
+			</bean>
+		</property>
+				<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.connection.characterEncoding">utf8</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<!--  DATABASE INSERT -->		
+    			<prop key="hibernate.hbm2ddl.import_files">/import-data.sql</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ============================ TRANSACTION MANAGER ============================ -->
+
+	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+
+	<!--
+		Enable exception translation for beans annotated with @Repository
+	-->
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+	<!-- persistence -->
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+
+</beans>
