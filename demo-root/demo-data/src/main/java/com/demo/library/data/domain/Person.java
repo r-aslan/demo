@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.demo.libraryd.data.domain;
+package com.demo.library.data.domain;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
