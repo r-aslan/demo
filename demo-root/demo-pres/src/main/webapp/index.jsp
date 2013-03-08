@@ -8,7 +8,7 @@
 <title>Index page</title>
 </head>
 <body>
-		<jsp:forward page="/home.html" />
+		<% response.sendRedirect("hello.html"); %>
 
 </body>
 </html>
