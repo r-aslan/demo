@@ -5,6 +5,10 @@ import java.util.List;
 import com.demo.library.data.domain.AbstractMedia;
 import com.demo.library.data.domain.Customer;
 
+/**
+ * @author Zo Randrianarivo
+ *
+ */
 public interface IAbstractMediaDAO extends IMediaDAO<AbstractMedia> {
 
 	/**
