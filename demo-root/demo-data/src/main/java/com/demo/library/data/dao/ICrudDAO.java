@@ -6,8 +6,9 @@ package com.demo.library.data.dao;
 import java.util.List;
 
 /**
- * @author zo
- *
+ * @author Zo Randrianarivo
+ * Generic CRUD interface
+ * @param <T> Generic class
  */
 public interface ICrudDAO<T>{
 

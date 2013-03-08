@@ -4,7 +4,7 @@ import com.demo.library.data.domain.Movie;
 
 
 /**
- * @author zo
+ * @author Zo Randrianarivo
  * Interface for operations on Movie
  */
 public interface IMovieDAO extends IMediaDAO<Movie>{

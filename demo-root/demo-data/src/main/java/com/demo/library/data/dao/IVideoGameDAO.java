@@ -4,7 +4,7 @@ import com.demo.library.data.domain.VideoGame;
 
 
 /**
- * @author zo
+ * @author Zo Randrianarivo
  * Interface for operations on VideoGame
  */
 public interface IVideoGameDAO extends IMediaDAO<VideoGame> {
