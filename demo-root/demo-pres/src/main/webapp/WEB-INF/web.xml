@@ -20,7 +20,7 @@
 
 	<!-- SERVLETS -->
 	<servlet>
-		<servlet-name>demo</servlet-name>
+		<servlet-name>demo-pres</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -30,7 +30,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>demo</servlet-name>
+		<servlet-name>demo-pres</servlet-name>
 		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 

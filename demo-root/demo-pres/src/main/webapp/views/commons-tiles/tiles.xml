@@ -10,6 +10,7 @@
 		<put-attribute name="title" value="" />
 		<put-attribute name="header" value="/views/commons-tiles/header.jsp" />
 		<put-attribute name="leftsidebar" value="/views/commons-tiles/leftSidebar.jsp" />
+		<put-attribute name="features" value="/views/commons-tiles/feature.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/views/commons-tiles/footer.jsp" />
 	</definition>

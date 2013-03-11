@@ -8,7 +8,7 @@
 <title>Index page</title>
 </head>
 <body>
-		<% response.sendRedirect("hello.html"); %>
+		<% response.sendRedirect("home.html"); %>
 
 </body>
 </html>

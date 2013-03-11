@@ -25,7 +25,7 @@ public class HomeController {
 	 *            id of the trader to display
 	 * @return a ModelMap with the model attributes for the view
 	 */
-	@RequestMapping("/home.html")
+	@RequestMapping("home.html")
 	public ModelAndView showHomePage() {
 
 		log.debug("Home page");

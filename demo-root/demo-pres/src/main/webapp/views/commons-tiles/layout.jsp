@@ -65,7 +65,7 @@ function clearText(field)
  </div> <!-- end of templatemo_wrapper -->
 
 
-<tiles:insertAttribute name="footer" />
+		<tiles:insertAttribute name="footer" />
 
 </body>
 </html>
